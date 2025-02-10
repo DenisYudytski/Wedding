@@ -1,0 +1,67 @@
+.timing-flex-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 20px;
+	margin-bottom: 44px;
+}
+.timing-flex-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.timing-icon {
+	width: 44px;
+	height: 44px;
+}
+
+.timing-flex-item svg{
+	width: 44px;
+	height: 44px;
+}
+
+.countdown {
+	display: flex;
+	justify-content: center;
+}
+
+.countdown-item {
+	padding: 0 1.2vw;
+	text-align: center;
+	position: relative;
+}
+
+.countdown-item:not(.countdown-item:first-child):before {
+    content: "";
+	 width: 20px;
+	 height: 40px;
+	 left: -12px;
+	 background-size: contain;
+    display: block;
+    position: absolute;
+    top: -16px;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    background-image: url('../../Assets/separator.svg');
+    background-position: center;
+}
+/* .border-item {
+	padding: 4px;
+	border: 1px solid #967969;
+	border-radius: 4px;
+} */
+
+.countdown-item span {
+	width: 80px;
+	line-height: 1.2;
+	display: block;
+	font-size: 2em;
+}
+
+.label {
+	font-size: 24px !important;
+}
