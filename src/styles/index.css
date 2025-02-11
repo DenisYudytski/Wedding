@@ -34,6 +34,10 @@
 body {
 	line-height: 1.5;
 	font-family: "Felidae";
+	font-size: 24px;
+	@media screen and (min-width: 1024px) {
+		font-size: 30px;
+	}
 }
 
 .footer {
@@ -45,21 +49,18 @@ body {
 	width: 100%;
 }
 .container {
-	/* background-image: url('./Assets/body-background1.jpg'); */
-	background-size: cover;
-	/* background-position: center; */
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	overflow-x: hidden;
 }
 
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+section {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
 }
 
 .location-container {
@@ -93,6 +94,10 @@ body {
 	font-size: 36px;
 	text-transform: uppercase;
 	margin-bottom: 20px;
+	@media screen and (min-width: 1024px) {
+		font-size: 75px;
+		width: fit-content;
+	};
 }
 
 .details {
@@ -111,6 +116,13 @@ body {
 	text-transform: uppercase;
 }
 
+.sudar-image {
+	width: 300px;
+	@media screen and (min-width: 1024px) {
+		width: 600px;
+	}
+}
+
 .block-title-mt {
 	margin-top: 20px;
 }
@@ -121,22 +133,21 @@ body {
 	border-bottom-width: 1px;
 }
 
-.white-block-container {
-	height: 100vh;
-	width: 100vw;
+.white-block-container {	
 	background-color: #f0eee8;
 	color: #967969;
+	align-items: center;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
 	padding: 28px;
-	scroll-snap-align: start;
+	@media screen and (min-width: 1024px) {
+		background-image: url('../../Assets/hello.webp');
+	}
 }
 
 .green-block-container {
-	height: 100vh;
-	width: 100vw;
 	background-color: #5d755d;
 	color: #FFFDD0;
 	display: flex;
@@ -312,4 +323,52 @@ body {
 	/* height: 30px; */
 	display: flex;
 	/* align-items: center; */
+}
+
+.polaroid-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background-image: url('../../Assets/polaroid-bg.png');
+	color: #967969;
+	position: relative;
+}
+
+.frame {
+	width: 260px;
+	height: 290px;
+	padding: 10px;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 5px 10px 0 #0006;
+	rotate: -3deg;
+}
+
+.photo {
+	width: 240px;
+	height: 240px;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.first-photo {
+	background-image: url('../../Assets/IMG_2637.JPG');
+}
+
+.second-photo {
+	background-image: url('../../Assets/first-block-photo.jpg');
+}
+
+.first-photo-frame {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.second-photo-frame {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
 }

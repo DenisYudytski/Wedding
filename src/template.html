@@ -8,10 +8,13 @@
   </head>
   <body>
     <div class="container">
-      <div class="content">
+      <!-- <div class="content"> -->
         <!-- ---------------------------------------------FIRST BLOCK----------------------------------------------------------------------------------------------- -->
 
-        <section class="first-block-container">
+        <section class="video-block-container">
+        <video id="video" muted loop autoplay>
+        <source src="../Assets/kate2.mp4">
+          </video>
           <div class="first-block-text">
             <h1 class="first-block-title">
               K <span style="font-size: 60px">&</span> Đ
@@ -316,7 +319,28 @@
 
         <!-- ---------------------------------------------VIDEO BLOCK----------------------------------------------------------------------------------------------- -->
 
-<section class="first-block-container"></section>
+<section class="polaroid-block">
+    <h2 class="block-title title-underline">До нашей свадьбы</h2>
+             <div class="countdown">
+               <div class="countdown-item">
+                 <span class="border-item" id="days">00</span>
+                 <span class="label" id="days-label">Дней</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="border-item" id="hours">00</span>
+                 <span class="label" id="hours-label">Часов</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="border-item" id="minutes">00</span>
+                 <span class="label" id="minutes-label">Минут</span>
+               </div>
+               <div class="countdown-item">
+                 <span class="border-item" id="seconds">00</span>
+                 <span class="label" id="seconds-label">Секунд</span>
+               </div>
+  <div class="frame first-photo-frame"><div class="photo first-photo"></div></div>
+  <div class="frame second-photo-frame"><div class="photo second-photo"></div></div>
+</section>
 
         <!-- ---------------------------------------------DRESSCODE BLOCK----------------------------------------------------------------------------------------------- -->
         <section class="white-block-container">
@@ -328,40 +352,14 @@
             </p>
             <div class="dress-code">
               <div class="colors"><div style="background: #967969"></div></div>
-              <!-- <div class="colors"><div style="background: #FFFDD0"></div></div> -->
+              <div class="colors"><div style="background: #F3DCCE"></div></div>
               <!-- <div class="colors"><div style="background: #32412c"></div></div> -->
               <div class="colors"><div style="background: #5d755d"></div></div>
-              <div class="colors"><div style="background: #bebebe"></div></div>
               <div class="colors"><div style="background: #000"></div></div>
+              <div class="colors"><div style="background: #bebebe"></div></div>
             </div>
-            <h2 class="block-title title-underline">До нашей свадьбы</h2>
-            <div class="countdown">
-              <div class="countdown-item">
-                <span class="border-item" id="days">00</span>
-                <span class="label" id="days-label">Дней</span>
-              </div>
-              <div class="countdown-item">
-                <span class="border-item" id="hours">00</span>
-                <span class="label" id="hours-label">Часов</span>
-              </div>
-              <div class="countdown-item">
-                <span class="border-item" id="minutes">00</span>
-                <span class="label" id="minutes-label">Минут</span>
-              </div>
-              <div class="countdown-item">
-                <span class="border-item" id="seconds">00</span>
-                <span class="label" id="seconds-label">Секунд</span>
-              </div>
-                    <!-- <img
-            width="260px"
-            class="flower-image-left"
-            src="../Assets/flower3_left.svg"
-          />
-          <img
-            width="220px"
-            class="flower-image-right"
-            src="../Assets/flower3_right.svg"
-          /> -->
+          <img width="240" class="flower-image" src="../Assets/flower1.svg" />
+          <img width="260px" class="flower-image2" src="../Assets/flower2.svg" />
         </section>
 
 
@@ -600,7 +598,7 @@
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
       <!-- <button class="footer">Подтвердить присутствие</button> -->
     </div>
   </body>
