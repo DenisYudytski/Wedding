@@ -1,0 +1,59 @@
+footer {
+	font-family: Flora;
+	color: #967969;
+	background-image: url('../../Assets/paper.jpg');
+	/* background-repeat: no-repeat; */
+	background-size: contain;
+	width: 100%;
+	padding: 40px 0;
+	font-size: 22px;
+
+	@media screen and (min-width: 1024px) {
+		font-size: 48px;
+		padding: 70px 0;
+	}
+}
+
+.footer__tx {
+	font-size: 22px;
+	letter-spacing: 1px;
+	margin-right: 185px;
+	margin-top: -7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-style: normal;
+	font-weight: 400;
+
+	@media screen and (min-width: 1024px) {
+		margin-right: 490px;
+		font-size: 48px;
+		line-height: 140%;
+		letter-spacing: 2.4px;
+	}
+}
+
+;
+
+.footer-img {
+	width: 36px;
+	height: 36px;
+	margin-left: 5px;
+}
+
+.footer__name {
+	font-size: 24px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	margin-left: 64px;
+	font-style: normal;
+	font-weight: 400;
+
+	@media screen and (min-width: 1024px) {
+		margin-top: 23px;
+		margin-left: 120px;
+		font-size: 48px;
+		line-height: 140%;
+		letter-spacing: 2.4px;
+	}
+}

@@ -1,0 +1,109 @@
+.polaroid-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	background-image: url('../../Assets/polaroid-bg.png');
+	color: #967969;
+	position: relative;
+}
+
+.frame {
+	width: 260px;
+	height: 290px;
+	padding: 10px;
+	border-radius: 2px;
+	background-color: #fff;
+	box-shadow: 0 5px 10px 0 #0006;
+	rotate: -3deg;
+
+	@media screen and (min-width: 1024px) {
+		width: 340px;
+		height: 380px;
+	}
+}
+
+.photo {
+	width: 240px;
+	height: 240px;
+	background-size: cover;
+	background-position: 50% 50%;
+
+	@media screen and (min-width: 1024px) {
+		width: 320px;
+		height: 320px;
+	}
+}
+
+.first-photo {
+	background-image: url('../../Assets/polaroid/house.PNG');
+}
+
+.second-photo {
+	background-image: url('../../Assets/polaroid/novosib.jpg');
+
+}
+
+.third-photo {
+	display: none;
+
+	@media screen and (min-width: 1024px) {
+		display: block;
+		background-image: url('../../Assets/polaroid/divno.JPG');
+	}
+}
+
+.fourth-photo {
+	display: none;
+
+	@media screen and (min-width: 1024px) {
+		display: block;
+		background-size: 130%;
+		background-position: right;
+		background-image: url('../../Assets/polaroid/baikal.jpg');
+	}
+}
+
+.first-photo-frame {
+	position: absolute;
+	top: 15px;
+	left: 30px;
+	@media screen and (min-width: 1024px) {
+		top: 30px;
+	}
+}
+
+.second-photo-frame {
+	position: absolute;
+	bottom: 15px;
+	right: 40px;
+
+	@media screen and (min-width: 1024px) {
+		bottom: 40px;
+	}
+}
+
+.third-photo-frame {
+	position: absolute;
+	top: 30px;
+	right: 200px;
+	rotate: 3deg;
+	display: none;
+
+	@media screen and (min-width: 1024px) {
+		display: block;
+	}
+}
+
+.fourth-photo-frame {
+	position: absolute;
+	bottom: 40px;
+	left: 160px;
+	rotate: 3deg;
+	display: none;
+
+	@media screen and (min-width: 1024px) {
+		display: block;
+	}
+}

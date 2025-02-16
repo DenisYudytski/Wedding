@@ -4,11 +4,15 @@
 
 .slider {
 	position: relative;
-	width: 300px;
+	width: 90vw;
 	margin: 0 auto 0;
 	user-select: none;
 	touch-action: pan-y;
 	z-index: 100;
+	@media screen and (min-width: 1024px) {
+		max-width: 624px;
+		font-size: 30px;
+	};
 }
 
 /* .slider img {
@@ -16,8 +20,11 @@
 } */
 
 .slider-list {
-	width: 300px;
+	width: 90vw;
 	overflow: hidden;
+	@media screen and (min-width: 1024px) {
+		max-width: 624px;
+	};
 }
 
 .slider-list.grab {
@@ -34,12 +41,16 @@
 }
 
 .slide {
-	width: 300px;
+	width: 90vw;
 	flex-shrink: 0;
 	font-size: 24px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media screen and (min-width: 1024px) {
+		max-width: 624px;
+		font-size: 30px;
+	};
 }
 
 .slider-arrows {
@@ -61,6 +72,20 @@
 	margin: 0 12px;
 	font-size: 30px;
 	cursor: pointer;
+	transition: all .3s;
+}
+
+.next:hover {
+	@media screen and (min-width: 1024px) {
+		transition: transform .3s;
+		transform: scale(1.2);
+	};
+}
+.prev:hover {
+	@media screen and (min-width: 1024px) {
+		transition: transform .3s;
+		transform: rotate(180deg) scale(1.2);
+	};
 }
 
 .prev-arrow {

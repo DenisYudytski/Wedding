@@ -13,40 +13,9 @@ const modalClose = document.getElementsByClassName("modalClose")[0];
 const roadButton = document.querySelector(".road-button");
 const acceptButton = document.querySelector(".accept-button");
 
-const flowerImages = document.querySelectorAll(".flower-image");
 const flowerImages2 = document.querySelectorAll(".flower-image2");
 
-const checkboxGroup = document.querySelectorAll('input[name="preferences"]');
 const guestForm = document.querySelector(".guest-form");
-const sections = document.getElementsByTagName("section");
-
-let sectionCount = 0;
-let lastScrollTop = 0;
-let isScrollIgnored = false;
-
-// window.addEventListener("scroll", function () {
-//   const topScroll = window.scrollY || document.documentElement.scrollTop;
-//   if (topScroll > lastScrollTop && sectionCount < sections.length - 1) {
-//     if (!isScrollIgnored) {
-//       sectionCount++;
-//       console.log("Прокрутка вниз");
-//     }
-//   } else if (sectionCount > 0) {
-//     if (!isScrollIgnored) {
-//       sectionCount--;
-//       console.log("Прокрутка вверх");
-//     }
-//   }
-//   if (!isScrollIgnored) {
-//     const section = document.getElementsByTagName("section")[sectionCount];
-//     isScrollIgnored = true;
-//     section.scrollIntoView({ behavior: "smooth" });
-//     setTimeout(() => (isScrollIgnored = false), 800);
-//   }
-//   console.log("sectionCount", sectionCount);
-
-//   lastScrollTop = topScroll;
-// });
 
 function bodyMargin() {
   bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
@@ -364,19 +333,7 @@ arrows.addEventListener("click", function (event) {
   slide();
 });
 
-const getWidthMultiply = (index) => {
-  return index && index === "1"
-    ? window.screen.width < 390 && window.screen.height < 760
-      ? 4.6
-      : 3.5
-    : 3.5;
-};
-
 if (window.screen.width < 1024) {
-  for (let index in Array.from(flowerImages)) {
-    flowerImages[index].width = window.screen.height / getWidthMultiply(index);
-  }
-
   for (let index in Array.from(flowerImages2)) {
     flowerImages2[index].width =
       window.screen.height /
@@ -387,9 +344,6 @@ if (window.screen.width < 1024) {
         : 3);
   }
 } else {
-  flowerImages.forEach(function (elem) {
-    elem.parentNode.removeChild(elem);
-  });
   flowerImages2.forEach(function (elem) {
     elem.parentNode.removeChild(elem);
   });
@@ -398,7 +352,7 @@ if (window.screen.width < 1024) {
 bodyMargin();
 
 acceptButton.addEventListener("click", function () {
-  modalBackground.style.display = "block";
+  modalBackground.style.display = "flex";
   bodyElementHTML.style.overflowY = "hidden";
   if (windowInnerWidth >= 1366) {
     bodyMargin();

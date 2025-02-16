@@ -1,19 +1,9 @@
-.first-block-container {
-	background-image: url('../../Assets/first-block-photo.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-}
-
 .first-block-text {
-	/* background-color: #ffffff49; */
-	font-family: Partizia;
+	background-color: #ffffff54;
+	font-family: Felidae;
 	line-height: 1;
 	font-weight: 700;
-	color: #000;
+	/* color: #5d755d; */
 	text-align: center;
 	padding: 12px;
 	position: absolute;
@@ -21,10 +11,63 @@
 	top: 5%;
 	font-size: 80px;
 	transform: translate(50%);
+	@media screen and (min-width: 1024px) {
+		font-size: 100px;
+	}
 }
 
 .first-block-title {
+	color: #5d755d;
 	margin-bottom: 20px;
+}
+
+.last-block-text {
+	background-color: #ffffff54;
+	font-family: Felidae;
+	line-height: 1;
+	font-weight: 700;
+	/* color: #5d755d; */
+	text-align: center;
+	padding: 12px;
+	position: absolute;
+	right: 50%;
+	top: 5%;
+	font-size: 30px;
+	transform: translate(50%);
+	@media screen and (min-width: 1024px) {
+		font-size: 60px;
+	}
+}
+
+.small-letters {
+	font-size: 30px;
+	@media screen and (min-width: 1024px) {
+		font-size: 80px;
+	}
+}
+
+.last-block-title {
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.last-block-names {
+	font-size: 60px;
+	@media screen and (min-width: 1024px) {
+		font-size: 100px;
+	}
+}
+
+.first-block-subtitle {
+	font-size: 60px;
+	font-family: Flora;
+	@media screen and (min-width: 1024px) {
+		font-size: 80px;
+	}
+}
+
+.flora-letter {
+	font-family: Flora;
 }
 
 #video {

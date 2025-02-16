@@ -1,0 +1,48 @@
+.media-block {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+}
+
+.media-block img {
+	@media screen and (min-width: 1024px) {
+		width: 50px;
+	}
+}
+
+.telegram {
+	transition: all 1s;
+}
+
+.wats {
+	transition: all 1s;
+}
+
+.wats:hover {
+	transition: all 1s;
+	transform: rotate(-360deg);
+}
+
+.telegram:hover {
+	transition: all 1s;
+	transform: rotate(360deg);
+}
+
+.telegram stop {
+	transition: all 1s;
+	stop-color: #967969
+}
+
+.telegram:hover stop {
+	stop-color: #24A1DE
+}
+
+.wats path {
+	transition: all 1s;
+	fill: #967969
+}
+
+.wats:hover path {
+	transition: all 1s;
+	fill: #2cb742
+}

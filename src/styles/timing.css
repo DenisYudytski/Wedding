@@ -3,24 +3,48 @@
 	flex-direction: column;
 	align-items: center;
 	font-size: 20px;
-	margin-bottom: 44px;
+	@media screen and (min-width: 1024px) {
+		font-size: 28px;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+	};
 }
 .timing-flex-item {
 	display: flex;
 	align-items: center;
 	gap: 12px;
-	max-width: 100%;
 	width: 100%;
+	@media screen and (min-width: 1024px) {
+		width: 320px;
+		flex-direction: column;
+		text-align: center;
+	};
 }
 
 .timing-icon {
 	width: 44px;
 	height: 44px;
+	@media screen and (min-width: 1024px) {
+		width: 88px;
+		height: 88px;
+	};
+}
+
+.timing-text {
+	@media screen and (min-width: 1024px) {
+		display: flex;
+		flex-direction: column-reverse;
+	};
 }
 
 .timing-flex-item svg{
 	width: 44px;
 	height: 44px;
+	@media screen and (min-width: 1024px) {
+		width: 88px;
+		height: 88px;
+	};
 }
 
 .countdown {
@@ -64,4 +88,24 @@
 
 .label {
 	font-size: 24px !important;
+	@media screen and (min-width: 1024px) {
+		font-size: 28px !important;
+	};
+}
+
+@keyframes gliter {
+	0% {
+			fill: #fff
+		}
+		100% {
+			fill: #967969
+		}
+}
+
+.first-star {
+	animation: gliter 1s alternate infinite;
+}
+
+.second-star {
+	animation: gliter 1s alternate infinite;
 }
