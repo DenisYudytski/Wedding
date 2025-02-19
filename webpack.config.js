@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -24,19 +24,21 @@ module.exports = {
         test: /\.html$/,
         use: "html-loader",
       },
-      // {
-      //   test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-      //   type: "asset/resource",
-      // },
-      // {
-      //   test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-      //   type: "asset/inline",
-      // },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline",
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
-  watch: true,
+  optimization: {
+    runtimeChunk: "single",
+  },
 };

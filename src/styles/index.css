@@ -52,6 +52,7 @@ section {
 	height: 100vh;
 	width: 100vw;
 	position: relative;
+	transition: height 0.2s linear;
 }
 
 .block-title {
@@ -59,7 +60,9 @@ section {
 	font-size: 40px;
 	text-transform: uppercase;
 	margin-bottom: 20px;
-
+	@media screnn and (orientation: landscape) {
+		width: fit-content;
+	};
 	@media screen and (min-width: 1024px) {
 		font-size: 65px;
 		width: fit-content;
@@ -75,10 +78,17 @@ section {
 	font-family: Partizia;
 }
 
+
+
 .block-subtitle {
 	text-align: center;
 	font-size: 30px;
 	text-transform: uppercase;
+}
+
+a[href^="tel"] {
+	color: #967969;
+	text-decoration: none;
 }
 
 .block-details {
@@ -87,11 +97,32 @@ section {
 	text-transform: uppercase;
 }
 
+.block-date {
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
 .sudar-image {
 	width: 300px;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1024px), (orientation: landscape) {
 		width: 36vw;
+	};
+}
+
+.sudar-container {
+	@media screen and (max-height: 500px) and (orientation: landscape) {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	};
+}
+
+.sudar-container h2 {
+	@media screen and (max-height: 500px) and (orientation: landscape) {
+		font-size: 24px;
+		margin: 0;
 	};
 }
 
@@ -115,33 +146,13 @@ section {
 	position: relative;
 	padding: 28px;
 	overflow: hidden;
-
-	@media screen and (min-width: 1024px) {
-		background-image: url('../../Assets/hello.webp');
+	
+	background-image: url('../../Assets/hello.webp');
+	@media screen and (min-width: 1024px),
+	(orientation: landscape) {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-}
-
-.white-block-container::before {
-	content: "";
-	width: 50vw;
-	height: 260px;
-	background-image: url('../../Assets/flower1.svg');
-	background-repeat: no-repeat;
-	transform: rotate(30deg);
-	position: absolute;
-	top: 10px;
-	left: -60px;
-
-	@media screen and (min-width: 1024px) {
-		background-image: none;
-	};
-
-	@media screen and (max-height: 700px) {
-		width: 50vw;
-	}
-
 }
 
 .green-block-container {
@@ -167,7 +178,7 @@ section {
 	top: 0px;
 	left: -12px;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1024px), (orientation: landscape) {
 		width: 50vw;
 		height: 50vw;
 	};
@@ -183,49 +194,42 @@ section {
 	bottom: 0px;
 	right: -24px;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1024px), (orientation: landscape) {
 		width: 50vw;
 		height: 50vw;
 	};
 }
 
 .center-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: url('../../Assets/paper.jpg');
+	border-radius: 15px;
+	padding: 12px;
+	@media screen and (orientation: landscape) {
+	};
 	@media screen and (min-width: 1024px) {
-		background-image: url('../../Assets/paper.jpg');
-		border-radius: 15px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		padding: 60px;
 	};
-}
-
-.flower-image2 {
-	position: absolute;
-	bottom: -16px;
-	right: 50%;
-	transform: translate(50%);
 }
 
 .button {
 	z-index: 10;
 	width: 200px;
-	height: 40px;
+	height: 50px;
 	padding: 8px 12px;
 	margin-top: 20px;
 	font-family: Partizia;
 	font-size: 20px;
-	background-color: #5d755d;
+	background: transparent;
 	border: 1px solid #FFFDD0;
 	color: #FFFDD0;
+	cursor: pointer;
 
 	@media screen and (min-width: 1024px) {
-		border-radius: 0;
 		position: relative;
 		width: 300px;
-		height: 50px;
-		cursor: pointer;
-		background: transparent;
 		outline: none;
 		transition: 1s ease-in-out;
 	}

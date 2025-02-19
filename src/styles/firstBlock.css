@@ -2,22 +2,28 @@
 	background-color: #ffffff54;
 	font-family: Felidae;
 	line-height: 1;
+	width: 100%;
 	font-weight: 700;
-	/* color: #5d755d; */
+	color: #000;
 	text-align: center;
 	padding: 12px;
 	position: absolute;
 	right: 50%;
-	top: 5%;
+	bottom: 0;
 	font-size: 80px;
 	transform: translate(50%);
 	@media screen and (min-width: 1024px) {
-		font-size: 100px;
+		font-size: 120px;
+		padding: 24px;
+	}
+	@media screen and (min-width: 2048px) {
+		padding: 24px;
+		font-size: 160px;
 	}
 }
 
 .first-block-title {
-	color: #5d755d;
+	/* color: #5d755d; */
 	margin-bottom: 20px;
 }
 
@@ -31,7 +37,8 @@
 	padding: 12px;
 	position: absolute;
 	right: 50%;
-	top: 5%;
+	bottom: 0;
+	width: 100%;
 	font-size: 30px;
 	transform: translate(50%);
 	@media screen and (min-width: 1024px) {
@@ -71,7 +78,9 @@
 }
 
 #video {
-	height: 100vh;
+	height: 100lvh;
 	width: 100vw;
 	object-fit: cover;
+	object-position: 27%;
+	transition: height 0.2s linear;
 }

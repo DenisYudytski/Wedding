@@ -24,9 +24,6 @@ body {
 	font-family: Partizia;
 	color: #967969;
 	position: absolute;
-	width: 90vw;
-	max-width: 720px;
-	height: 90vh;
 	left: 50%;
 	transform: translateX(-50%);
 	border-radius: 10px;
@@ -34,9 +31,27 @@ body {
 	cursor: default;
 	padding: 32px 16px;
 	overflow-y: auto;
+}
+
+.modal-form {
+	width: 90vw;
+	max-width: 720px;
+	height: 90svh;
 	@media screen and (min-height: 820px), (min-width: 560px) {
+		/* height: 80vh; */
 		max-height: 740px;
 	};
+}
+
+.modal-thanks {
+	height: fit-content;
+	padding: 49px;
+	width: 90vw;
+	max-width: 420px;
+}
+
+.thanks-title {
+	display: none;
 }
 
 .modalClose {

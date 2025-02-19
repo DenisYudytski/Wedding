@@ -4,18 +4,22 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 
 const windowInnerWidth = document.documentElement.clientWidth;
+const windowInnerHeight = document.documentElement.clientHeight;
 const scrollbarWidth = parseInt(window.innerWidth) - parseInt(windowInnerWidth);
 
 const bodyElementHTML = document.getElementsByTagName("body")[0];
 const modalBackground = document.getElementsByClassName("modalBackground")[0];
+const modalActive = document.getElementsByClassName("modalActive")[0];
 const modalClose = document.getElementsByClassName("modalClose")[0];
 
 const roadButton = document.querySelector(".road-button");
 const acceptButton = document.querySelector(".accept-button");
 
-const flowerImages2 = document.querySelectorAll(".flower-image2");
-
 const guestForm = document.querySelector(".guest-form");
+const thanksTitle = document.querySelector(".thanks-title");
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+console.log("window.innerHeight", windowInnerHeight);
 
 function bodyMargin() {
   bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
@@ -65,10 +69,11 @@ guestForm.addEventListener("submit", (e) => {
   }
   data.Preferences = preferences;
   addDoc(colRef, data).then(() => {
-    handleModalClose();
+    modalActive.className = "modal-thanks modalActive";
+    guestForm.style.display = "none";
+    thanksTitle.style.display = "block";
     guestForm.reset();
   });
-  handleModalClose();
 });
 
 const goToMap = () => {
@@ -149,7 +154,6 @@ let slider = document.querySelector(".slider"),
   arrows = slider.querySelector(".slider-arrows"),
   prev = arrows.children[0],
   next = arrows.children[2],
-  slideWidth = slides[0].offsetWidth,
   slideIndex = 0,
   posInit = 0,
   posX1 = 0,
@@ -163,7 +167,6 @@ let slider = document.querySelector(".slider"),
   transition = true,
   nextTrf = 0,
   prevTrf = 0,
-  lastTrf = (slides.length - 1) * slideWidth,
   posThreshold = slides[0].offsetWidth * 0.35,
   trfRegExp = /([-0-9.]+(?=px))/,
   swipeStartTime,
@@ -172,6 +175,7 @@ let slider = document.querySelector(".slider"),
     return event.type.search("touch") !== -1 ? event.touches[0] : event;
   },
   slide = function () {
+    const slideWidth = slides[0].offsetWidth;
     if (transition) {
       sliderTrack.style.transition = "transform .5s";
     }
@@ -185,6 +189,7 @@ let slider = document.querySelector(".slider"),
     wishCount.innerText = `${slideIndex + 1}/${slides.length}`;
   },
   swipeStart = function (e) {
+    const slideWidth = slides[0].offsetWidth;
     let evt = getEvent(e);
 
     if (allowSwipe) {
@@ -233,7 +238,7 @@ let slider = document.querySelector(".slider"),
     if (isSwipe) {
       if (slideIndex === 0) {
         if (posInit < posX1) {
-          setTransform(transform, 0);
+          setTransform(transform);
           return;
         } else {
           allowSwipe = true;
@@ -242,7 +247,7 @@ let slider = document.querySelector(".slider"),
 
       if (slideIndex === slides.length - 1) {
         if (posInit > posX1) {
-          setTransform(transform, lastTrf);
+          setTransform(transform);
           return;
         } else {
           allowSwipe = true;
@@ -299,7 +304,9 @@ let slider = document.querySelector(".slider"),
       allowSwipe = true;
     }
   },
-  setTransform = function (transform, comapreTransform) {
+  setTransform = function (transform) {
+    const slideWidth = slides[0].offsetWidth;
+    const comapreTransform = (slides.length - 1) * slideWidth;
     if (transform >= comapreTransform) {
       if (transform > comapreTransform) {
         sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`;
@@ -332,22 +339,6 @@ arrows.addEventListener("click", function (event) {
   }
   slide();
 });
-
-if (window.screen.width < 1024) {
-  for (let index in Array.from(flowerImages2)) {
-    flowerImages2[index].width =
-      window.screen.height /
-      (index === "1"
-        ? window.screen.height < 700 || window.screen.width < 390
-          ? 4
-          : 3
-        : 3);
-  }
-} else {
-  flowerImages2.forEach(function (elem) {
-    elem.parentNode.removeChild(elem);
-  });
-}
 
 bodyMargin();
 
