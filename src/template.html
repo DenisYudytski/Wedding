@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="public">
   <link rel="shortcut icon" href="../Assets/wine_18396525.png" />
   <link rel="apple-touch-icon-precomposed" href="../Assets/wine_18396525.png">
   <title>Катя и Денис</title>
@@ -15,7 +16,7 @@
 
     <section class="video-block-container">
       <video id="video" muted loop autoplay playsinline>
-        <source src="../Assets/rings-fade.mp4">
+        <source src="../Assets/Rings-Fade-fast.mp4">
       </video>
       <div class="first-block-text">
         <h1 class="first-block-title">
@@ -49,7 +50,7 @@
         <img width="300px" class="sudar-image" src="../Assets/sudar.jpg" />
           <h2 class="block-title">Гостиный двор «Сударь»</h2>
           <h2 class="third-block-subtitle">
-            г. Иркутск 9 км Александровского тракта
+            г. Иркутск <br/> 9 км Александровского тракта
           </h2>
     </div>
       <button type="button" class="button road-button">
@@ -443,7 +444,7 @@
           <img src="../Assets/modalCross.svg" />
         </div>
         <div class="modalWindow">
-          <form class="guest-form">
+          <form action="#" id="guest-form" class="guest-form">
             <h3 class="guests-block-subtitle">
               Пожалуйста, подтвердите Ваше присутствие:
             </h3>
@@ -457,11 +458,11 @@
 
               <div class="form-block__item">
                 <label class="form-block__item-radio">
-                  <input class="radio-input" type="radio" name="attendance" value="Иду" required />
+                  <input class="radio-input" type="radio" name="attendance" value="идет" required />
                   <span class="answer">Да, с удовольствием</span>
                 </label>
                 <label class="form-block__item-radio">
-                  <input class="radio-input" type="radio" name="attendance" value="Не иду" />
+                  <input class="radio-input" type="radio" name="attendance" value="не идет" />
                   <span class="answer">Не смогу</span>
                 </label>
               </div>
@@ -518,7 +519,7 @@
     </div>
    <section class="video-block-container">
       <video id="video" muted loop autoplay playsinline>
-        <source src="../Assets/rings-fade.mp4">
+        <source src="../Assets/Rings-Fade-fast.mp4">
       </video>
       <div class="last-block-text">
         <h2 class="last-block-title">

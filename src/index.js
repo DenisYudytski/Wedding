@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import "./styles/index.css";
 
 import { initializeApp } from "firebase/app";
@@ -18,8 +19,28 @@ const acceptButton = document.querySelector(".accept-button");
 const guestForm = document.querySelector(".guest-form");
 const thanksTitle = document.querySelector(".thanks-title");
 
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-console.log("window.innerHeight", windowInnerHeight);
+document.addEventListener("DOMContentLoaded", function () {
+  let blocks = document.querySelectorAll("section");
+
+  function checkBlocksVisibility() {
+    let windowHeight = window.innerHeight;
+
+    blocks.forEach((block) => {
+      let blockPosition = block.getBoundingClientRect().top;
+
+      if (blockPosition < windowHeight - 100) {
+        block.style.opacity = "1";
+        block.style.transform = "translateY(0)";
+      }
+    });
+  }
+
+  checkBlocksVisibility();
+
+  window.addEventListener("scroll", function () {
+    checkBlocksVisibility();
+  });
+});
 
 function bodyMargin() {
   bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
@@ -34,24 +55,38 @@ const handleModalClose = () => {
 };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOBk64uMmcVonUcUUP2aSKDfiSsWMLE2s",
-  authDomain: "our-wedding-invite.firebaseapp.com",
-  projectId: "our-wedding-invite",
-  storageBucket: "our-wedding-invite.firebasestorage.app",
-  messagingSenderId: "394008514443",
-  appId: "1:394008514443:web:9c1932b5f6c2dc0264e98e",
+  apiKey: "AIzaSyDVMwhX0F2xfZa5u2OZ3_wCr4D2_S_wl84",
+  authDomain: "project-8461555780719130873.firebaseapp.com",
+  projectId: "project-8461555780719130873",
+  storageBucket: "project-8461555780719130873.firebasestorage.app",
+  messagingSenderId: "211628943413",
+  appId: "1:211628943413:web:7b03b7dd78b7fbde7fe97c",
 };
 
 initializeApp(firebaseConfig);
 
 const db = getFirestore();
 const colRef = collection(db, "guests");
-getDocs(colRef).then((snapshot) => {
-  let guests = [];
-  snapshot.docs.forEach((doc) => {
-    guests.push({ ...doc.data(), id: doc.id });
-  });
+
+emailjs.init({
+  publicKey: "A4xn8ICYLKC8sAd29",
+  blockHeadless: true,
+  limitRate: {
+    id: "app",
+    throttle: 10000,
+  },
 });
+
+const sendEmail = (template) => {
+  emailjs.send("service_l9qprq8", "template_y99coqc", template).then(
+    (response) => {
+      console.log("SUCCESS!", response, response.text, template);
+    },
+    (error) => {
+      console.log("FAILED...", error);
+    }
+  );
+};
 
 guestForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -68,6 +103,7 @@ guestForm.addEventListener("submit", (e) => {
     preferences.push("Ничего не выбрал");
   }
   data.Preferences = preferences;
+  sendEmail(data);
   addDoc(colRef, data).then(() => {
     modalActive.className = "modal-thanks modalActive";
     guestForm.style.display = "none";
@@ -90,7 +126,7 @@ const currentTimeZoneOffsetInHours = currentDate.getTimezoneOffset() / 60;
 const dateLocationOffset = -8;
 
 const targetDate = new Date(
-  `2025-08-25T1${4 - (currentTimeZoneOffsetInHours - dateLocationOffset)}:30:00`
+  `2025-08-25T${14 - (currentTimeZoneOffsetInHours - dateLocationOffset)}:30:00`
 );
 
 function plural(word, num) {

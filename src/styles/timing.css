@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	font-size: 24px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 30px;
 		flex-direction: row;
 		align-items: flex-start;
@@ -15,7 +15,7 @@
 	align-items: center;
 	gap: 12px;
 	width: 100%;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		width: 320px;
 		flex-direction: column;
 		text-align: center;
@@ -25,14 +25,14 @@
 .timing-icon {
 	width: 60px;
 	height: 60px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		width: 88px;
 		height: 88px;
 	};
 }
 
 .timing-text {
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		display: flex;
 		flex-direction: column-reverse;
 	};
@@ -41,7 +41,7 @@
 .timing-flex-item svg{
 	width: 60px;
 	height: 60px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		width: 88px;
 		height: 88px;
 	};
@@ -81,7 +81,7 @@
 
 /* .count-title {
 	font-size: 30px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 65px;
 	};
 } */
@@ -91,14 +91,14 @@
 	line-height: 1.2;
 	display: block;
 	font-size: 2em;
-	/* @media screen and (min-width: 1024px) {
+	/* @media screen and (min-width: 1440px) {
 		font-size: 2em;
 	}; */
 }
 
 .label {
 	font-size: 24px !important;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 40px !important;
 	};
 }

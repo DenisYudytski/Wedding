@@ -29,16 +29,9 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
-      },
-      {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
-  },
-  optimization: {
-    runtimeChunk: "single",
   },
 };

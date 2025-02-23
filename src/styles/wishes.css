@@ -6,7 +6,7 @@
 	position: relative;
 	width: 340px;
 	z-index: 100;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		width: 624px;
 		font-size: 30px;
 	};
@@ -37,7 +37,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		width: 624px;
 		font-size: 30px;
 	};
@@ -66,13 +66,13 @@
 }
 
 .next:hover {
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		transition: transform .3s;
 		transform: scale(1.2);
 	};
 }
 .prev:hover {
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		transition: transform .3s;
 		transform: rotate(180deg) scale(1.2);
 	};

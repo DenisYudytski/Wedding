@@ -12,7 +12,7 @@
 	bottom: 0;
 	font-size: 80px;
 	transform: translate(50%);
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 120px;
 		padding: 24px;
 	}
@@ -41,14 +41,14 @@
 	width: 100%;
 	font-size: 30px;
 	transform: translate(50%);
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 60px;
 	}
 }
 
 .small-letters {
 	font-size: 30px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 80px;
 	}
 }
@@ -60,7 +60,7 @@
 
 .last-block-names {
 	font-size: 60px;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 100px;
 	}
 }
@@ -68,7 +68,7 @@
 .first-block-subtitle {
 	font-size: 60px;
 	font-family: Flora;
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 80px;
 	}
 }

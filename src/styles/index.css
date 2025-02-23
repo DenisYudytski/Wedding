@@ -34,7 +34,7 @@ body {
 	font-family: "Felidae";
 	font-size: 22px;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 30px;
 	}
 }
@@ -49,10 +49,12 @@ body {
 }
 
 section {
-	height: 100vh;
+	height: 100lvh;
 	width: 100vw;
 	position: relative;
-	transition: height 0.2s linear;
+	opacity: 0;
+   transform: translateY(50px);
+   transition: all 0.5s linear;
 }
 
 .block-title {
@@ -63,7 +65,7 @@ section {
 	@media screnn and (orientation: landscape) {
 		width: fit-content;
 	};
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		font-size: 65px;
 		width: fit-content;
 	};
@@ -106,7 +108,7 @@ a[href^="tel"] {
 .sudar-image {
 	width: 300px;
 
-	@media screen and (min-width: 1024px), (orientation: landscape) {
+	@media screen and (min-width: 1440px), (orientation: landscape) {
 		width: 36vw;
 	};
 }
@@ -148,7 +150,7 @@ a[href^="tel"] {
 	overflow: hidden;
 	
 	background-image: url('../../Assets/hello.webp');
-	@media screen and (min-width: 1024px),
+	@media screen and (min-width: 1440px),
 	(orientation: landscape) {
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -178,7 +180,7 @@ a[href^="tel"] {
 	top: 0px;
 	left: -12px;
 
-	@media screen and (min-width: 1024px), (orientation: landscape) {
+	@media screen and (min-width: 1440px), (orientation: landscape) {
 		width: 50vw;
 		height: 50vw;
 	};
@@ -194,7 +196,7 @@ a[href^="tel"] {
 	bottom: 0px;
 	right: -24px;
 
-	@media screen and (min-width: 1024px), (orientation: landscape) {
+	@media screen and (min-width: 1440px), (orientation: landscape) {
 		width: 50vw;
 		height: 50vw;
 	};
@@ -209,7 +211,7 @@ a[href^="tel"] {
 	padding: 12px;
 	@media screen and (orientation: landscape) {
 	};
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		padding: 60px;
 	};
 }
@@ -227,7 +229,7 @@ a[href^="tel"] {
 	color: #FFFDD0;
 	cursor: pointer;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		position: relative;
 		width: 300px;
 		outline: none;
@@ -236,7 +238,7 @@ a[href^="tel"] {
 }
 
 .button:hover {
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		transition: 1s ease-in-out;
 		background: #4b5e4b;
 	}
@@ -245,7 +247,7 @@ a[href^="tel"] {
 .button svg {
 	display: none;
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		display: block;
 		position: absolute;
 		left: 0;
@@ -261,7 +263,7 @@ a[href^="tel"] {
 
 .button:hover svg {
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: 1440px) {
 		stroke-dashoffset: -800;
 	}
 }
