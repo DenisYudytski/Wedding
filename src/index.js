@@ -125,9 +125,12 @@ const currentDate = new Date();
 const currentTimeZoneOffsetInHours = currentDate.getTimezoneOffset() / 60;
 const dateLocationOffset = -8;
 
-const targetDate = new Date(
-  `2025-08-25T${14 - (currentTimeZoneOffsetInHours - dateLocationOffset)}:30:00`
-);
+const hour =
+  14 - (currentTimeZoneOffsetInHours - dateLocationOffset) < 10
+    ? "0" + (14 - (currentTimeZoneOffsetInHours - dateLocationOffset))
+    : 14 - (currentTimeZoneOffsetInHours - dateLocationOffset);
+
+const targetDate = new Date(`2025-08-25T${hour}:30:00`);
 
 function plural(word, num) {
   var forms = word.split("_");
